@@ -1,0 +1,76 @@
+﻿
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+
+            <div class="card-body">
+                <h4 class="card-title">Wallet Generator</h4>
+                <p class="card-text">Click on the button below to generate your blockchain wallet</p>
+                <input type="button" class="btn btn-primary btn-lg" value="Generate Wallet" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <label class="col-sm-12">Public Key:</label>
+        <div class="col-sm-10">
+            <textarea id="public_key" rows="5" class="form-control" readonly></textarea>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <label class="col-sm-12">Private Key:</label>
+        <div class="col-sm-10">
+            <textarea id="private_key" rows="5" class="form-control" readonly></textarea>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row" id="warning" style="display:none">
+        <div class="col-sm-12">
+            <div class="alert alert-danger" role="alert">
+                IMPORTANT
+                <ul>
+                    <li>Save you private and public keys. These Keys cannot be recovered!</li>
+                    <li>Dont share your private key with anyone</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Bootstrap core JS-->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://github.com/glinford/ellipsis.js"></script> 
+
+<script>
+
+    $(function () {
+        $('input').click(function () {
+
+            $.ajax({
+                url: '/wallet/new',
+                type: 'GET',
+                success: function (response) {
+                    document.getElementById("private_key").innerHTML = response['private_key'];
+                    document.getElementById("public_key").innerHTML = response['public_key'];
+                    document.getElementById("warning").style.display = "block";
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+
+</script>

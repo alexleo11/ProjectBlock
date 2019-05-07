@@ -1,0 +1,139 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-body">
+                <h4 class="card-tittle">
+                    Transactions to be added to the next block &nbsp;&nbsp;&nbsp;
+                    <button type="submit" id="refresh_transactions" class="btn btn-xs btn-primary">
+                        <i class="btn-default">Refresh</i>
+                    </button>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    var transactions = ViewBag.Transactions as List<Transaction>;
+}
+
+<!-- Tabla de transacciones-->
+<div class="container">
+    <table id="unmined_transactions_table" class="table-striped table-bordered" cellpadding="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Recipient Address</th>
+                <th>Sender Address</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach (var item in transactions)
+            {
+                <tr>
+                    <th>@i</th>
+                    <th>@item.Recipient</th>
+                    <th>@item.Sender</th>
+                    <th>@item.Amount</th>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+    <br />
+    <div class="col-lg-12 text-center">
+        <a href="@Url.Action("Mine","Home")" id="mine_button" class="btn btn-primary btn-lg" value="">Mine</a>
+    </div>
+</div>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-body">
+                <h4 class="card-tittle">
+                    Transactions on the blockchain &nbsp;&nbsp;&nbsp;
+                    <button type="submit" id="refresh_blockchain" class="btn btn-xs btn-primary">
+                        <i class="btn-default"></i>
+                    </button>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    var blocks = ViewBag.Blocks as List<Block>;
+}
+
+<!-- Tabla de transacciones con blockchain-->
+<div class="container">
+    <table id="transactions_table" class="table-striped table-bordered" cellpadding="0" width="">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th width="20%">Recipient Address</th>
+                <th width="20%">Sender Address</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Block</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int j = 1;
+            }
+            @foreach (var block in blocks)
+            {
+                @foreach (var item in block.Transactions)
+                {
+                    <tr>
+                        <th>@j</th>
+                        <th>@item.Recipient</th>
+                        <th>@item.Sender</th>
+                        <th>@item.Amount</th>
+                        <th>@block.Timestamp</th>
+                        <th>@(block.Index + 1)</th>
+                    </tr>
+                    j++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://github.com/glinford/ellipsis.js"></script>
+
+<script>
+    $(function () {
+        $('#unmided_transactions_table').dataTable();
+        $('#transactions_table').dataTable();
+
+        $("#refresh_transactions").click(function () {
+            window.location.reload();
+        });
+
+        $("#refresh_blockchain").click(function () {
+
+            $.ajax({
+                url: "/nodes/resolve",
+                type: "GET",
+                success: function (response) {
+
+                    window.location.reload();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>

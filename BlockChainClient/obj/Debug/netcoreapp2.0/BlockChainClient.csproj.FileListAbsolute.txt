@@ -1,0 +1,14 @@
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\BlockChainClient.deps.json
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\BlockChainClient.runtimeconfig.json
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\BlockChainClient.runtimeconfig.dev.json
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\BlockChainClient.dll
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\RSA.dll
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\RSA.pdb
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.csproj.CopyComplete
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\bin\Debug\netcoreapp2.0\BlockChainClient.pdb
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.dll
+C:\Users\ASUS\source\repos\BlockChain\BlockChainClient\obj\Debug\netcoreapp2.0\BlockChainClient.pdb

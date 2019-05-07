@@ -1,0 +1,6 @@
+C:\Users\ASUS\source\repos\BlockChain\RSA\bin\Debug\netcoreapp2.1\RSA.deps.json
+C:\Users\ASUS\source\repos\BlockChain\RSA\bin\Debug\netcoreapp2.1\RSA.dll
+C:\Users\ASUS\source\repos\BlockChain\RSA\obj\Debug\netcoreapp2.1\RSA.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\BlockChain\RSA\obj\Debug\netcoreapp2.1\RSA.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\BlockChain\RSA\obj\Debug\netcoreapp2.1\RSA.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\BlockChain\RSA\obj\Debug\netcoreapp2.1\RSA.AssemblyInfo.cs
